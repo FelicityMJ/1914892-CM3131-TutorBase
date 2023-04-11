@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Teacher Search</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <script src="searchable.js"></script>
+  </head>
+  <body ng-app="teacherApp" ng-controller="TeacherController">
+    
+          
+    <ion-content scroll-y>
+      <ion-item>
+        <ion-label>Name/City/Subject:</ion-label>
+      </ion-item>
+
+      <ion-searchbar id="search-input" placeholder="Search"></ion-searchbar>
+          
+      <form id="search-form">
+        <ion-button type="submit" expand="block">Search</ion-button>
+      </form>
+          
+      <ion-list id="teachers-list">
+      </ion-list>
+    </ion-content>          
+  </body>
+</html>

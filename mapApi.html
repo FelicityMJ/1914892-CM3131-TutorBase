@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaflet Map with Ionic</title>
+  <!-- Include Leaflet CSS and JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <!-- Include Ionic CSS and JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.bundle.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@ionic/core@5.6.7/dist/ionic/ionic.js"></script>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+<style>
+    .custom-popup {
+      font-size: 16px;
+    }
+  </style>
+
+</head>
+<body>
+  <ion-header>
+    <ion-toolbar>
+   
+        <ion-button expand="block" data-url="#/six" id="my-button">Our Tutors Around the World</ion-button>
+     
+        <script>
+        const button = document.getElementById('my-button');
+        const originalText = button.innerHTML;
+        let newText = 'Click on Tutor Icons!';
+        
+        button.addEventListener('click', () => {
+          if (button.innerHTML === originalText) {
+            button.innerHTML = newText;
+          } else {
+            button.innerHTML = originalText;
+          }
+        });
+        </script>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div id="map" style="height: 100%;"></div>
+  </ion-content>
+  <script>
+    // Define the MapComponent class
+    class MapComponent {
+      constructor() {
+        this.map = null;
+        this.mapContainer = document.getElementById('map');
+      }
+
+      ionViewDidEnter() {
+        // Initialize the map
+        this.map = L.map(this.mapContainer).setView([51.505, -0.09], 13);
+
+        // Add a tile layer to the map
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 18,
+          id: 'mapbox/streets-v11',
+          accessToken: 'pk.eyJ1IjoiMTkxNDg5MiIsImEiOiJjbGZzOXl6Z2swNDN4M3RvNHpvemlldWtuIn0.3za73SRor-M-VQ5cva9pGw'
+        }).addTo(this.map);
+
+        // Male Teacher Icon 1
+        const maleIcon = L.icon({
+          iconUrl: 'Pictures/maleteacher.png',
+          iconSize: [50, 50],
+          iconAnchor: [16, 50],
+          popupAnchor: [0, -50]
+        });
+
+        /* const marker1 = L.marker([51.5, -0.1], { icon: maleIcon }).addTo(this.map);
+        //marker1.bindPopup("<b>Hello!</b><br>This is marker 1.").openPopup();
+        marker1.bindPopup('<b>Michael Jordan</b><br>Basketball Coach.');
+        marker1.on('click', () => {
+        marker1.openPopup();
+        });
+ */
+
+
+        const popupContent =
+        '<b>Michael Jordan</b><br>Basketball Coach';
+      const marker1 = L.marker([51.5, -0.1], { icon: maleIcon }).addTo(this.map);
+      marker1.bindPopup(popupContent, { className: 'custom-popup' });
+      marker1.on('click', () => {
+        marker1.openPopup();
+      });
+
+
+
+        // Male Teacher Icon 2
+        
+     /*    const marker3 = L.marker([51.4, -0.1], { icon: maleIcon }).addTo(this.map);
+        marker3.bindPopup('<b>Bill Gates</b><br>Computer Science Tutor');
+        marker3.on('click', () => {
+        marker3.openPopup();
+        }); */
+
+        const popupContent3 =
+        '<b>Bill Gates</b><br>Computer Science Tutor';
+      const marker3 = L.marker([51.4, -0.1], { icon: maleIcon }).addTo(this.map);
+      marker3.bindPopup(popupContent3, { className: 'custom-popup' });
+      marker3.on('click', () => {
+        marker3.openPopup();
+      });
+
+        // Female Teacher Icon 1
+           const femaleIcon = L.icon({
+          iconUrl: 'Pictures/femaleteacher.png',
+          iconSize: [50, 50],
+          iconAnchor: [16, 50],
+          popupAnchor: [0, -50]
+        });
+
+        // const marker2 = L.marker([51.55, -0.1], { icon: femaleIcon }).addTo(this.map);
+
+         // Add popups to the markers
+  
+        /* marker2.bindPopup('<b>Carol Vorderman</b><br>Maths Tutor');
+        marker2.on('click', () => {
+        marker2.openPopup();
+        }); */
+
+        const popupContent2 =
+        '<b>Carol Vorderman</b><br>Maths Tutor';
+      const marker2 = L.marker([51.55, -0.1], { icon: femaleIcon }).addTo(this.map);
+      marker2.bindPopup(popupContent2, { className: 'custom-popup' });
+      marker2.on('click', () => {
+        marker2.openPopup();
+      });
+
+
+        // Female Teacher Icon 2
+
+      /*   const marker4 = L.marker([51.45, -0.1], { icon: femaleIcon }).addTo(this.map);
+
+         // Add popups to the markers
+  
+        marker4.bindPopup('<b>Nicola Sturgeon</b><br>Modern Studies Tutor');
+        marker4.on('click', () => {
+        marker4.openPopup();
+        }); */
+
+        const popupContent4 =
+        '<b>Nicola Sturgeon</b><br>Modern Studies Tutor';
+      const marker4 = L.marker([51.45, -0.1], { icon: femaleIcon }).addTo(this.map);
+      marker4.bindPopup(popupContent2, { className: 'custom-popup' });
+      marker4.on('click', () => {
+        marker4.openPopup();
+      });
+
+
+      }
+    }
+
+    // Create a new instance of the MapComponent class
+    const mapComponent = new MapComponent();
+
+    // Call the ionViewDidEnter method to initialize the map
+    mapComponent.ionViewDidEnter();
+  </script>
+</body>
+</html>
