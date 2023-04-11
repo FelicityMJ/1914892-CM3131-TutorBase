@@ -99,7 +99,7 @@ customElements.define('page-one', class extends HTMLElement {
             
                   <ion-card-content>
                       <ion-item>
-                          <ion-img id="img-choice" src="./Pictures/grad.jpg"/>
+                          <ion-img id="img-choice" src="../Pictures/grad.jpg"/>
                       </ion-item>
                       <ion-col></ion-col>
                       <div class="ion-text-justify">
@@ -119,7 +119,7 @@ customElements.define('page-one', class extends HTMLElement {
               <ion-card>
               <ion-card-content>
               <ion-item>
-                  <ion-img id="img-choice" src="./Pictures/5stars.jpg"/>
+                  <ion-img id="img-choice" src="../Pictures/5stars.jpg"/>
               </ion-item>
               <ion-col></ion-col>
               <div class="ion-text-justify">
@@ -136,20 +136,25 @@ customElements.define('page-one', class extends HTMLElement {
               <ion-card>
               <ion-card-content>
           
-            <iframe src="./mapApi.html" width="100%" height="500" frameBorder="0"></iframe>
+            <iframe src="../Pages/mapApi.html" width="100%" height="500" frameBorder="0"></iframe>
          
               </ion-card-content>
             </ion-card>
 
-
+            <ion-card>
+            <ion-card-content>
+        
+          <iframe src="../Pages/news.html" width="100%" height="500" frameBorder="0"></iframe>
+       
+            </ion-card-content>
+          </ion-card>
 
           </ion-content>
       `;
 
 const scriptTag = document.createElement('script');
-scriptTag.src = 'buttonRefresh.js';
+scriptTag.src = '../js/buttonRefresh.js';
 document.head.appendChild(scriptTag);
-
 
   }
 });
@@ -312,7 +317,7 @@ customElements.define('page-two', class extends HTMLElement {
       `;
 
       const scriptTag = document.createElement('script');
-      scriptTag.src = 'buttonRefresh.js';
+      scriptTag.src = '../js/buttonRefresh.js';
       document.head.appendChild(scriptTag);
 
   }
@@ -488,11 +493,11 @@ customElements.define('page-three', class extends HTMLElement {
 
 
 const scriptTag = document.createElement('script');
-      scriptTag.src = 'db.js';
+      scriptTag.src = '../js/db.js';
       document.head.appendChild(scriptTag);
 
       const scriptTag2 = document.createElement('script');
-scriptTag2.src = 'buttonRefresh.js';
+scriptTag2.src = '../js/buttonRefresh.js';
 document.head.appendChild(scriptTag2);
 
   }
@@ -615,11 +620,11 @@ customElements.define('page-four', class extends HTMLElement {
 
 
       const scriptTag = document.createElement('script');
-      scriptTag.src = 'database.js';
+      scriptTag.src = '../js/database.js';
       document.head.appendChild(scriptTag);
 
       const scriptTag2 = document.createElement('script');
-scriptTag2.src = 'buttonRefresh.js';
+scriptTag2.src = '../js/buttonRefresh.js';
 document.head.appendChild(scriptTag2);
 
   }
@@ -781,11 +786,11 @@ for (const item of myArray) {
 
 
   const scriptTag = document.createElement('script');
-  scriptTag.src = 'reviewNew.js';
+  scriptTag.src = '../js/reviewNew.js';
   document.head.appendChild(scriptTag);
  
   const scriptTag2 = document.createElement('script');
-scriptTag2.src = 'buttonRefresh.js';
+scriptTag2.src = '../js/buttonRefresh.js';
 document.head.appendChild(scriptTag2);
 
 }
@@ -892,14 +897,14 @@ customElements.define('page-six', class extends HTMLElement {
           <ion-card>
           <ion-card-content>
       
-        <iframe src="./Searchable.html" width="100%" height="500" frameBorder="0"></iframe>
+        <iframe src="../Pages/Searchable.html" width="100%" height="500" frameBorder="0"></iframe>
      
           </ion-card-content>
         </ion-card>        
       `;
    
       const scriptTag = document.createElement('script');
-scriptTag.src = 'buttonRefresh.js';
+scriptTag.src = '../js/buttonRefresh.js';
 document.head.appendChild(scriptTag);
 
   }

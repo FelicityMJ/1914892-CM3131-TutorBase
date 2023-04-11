@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secondary School Exam Preparation Tips</title>
+  <link rel="stylesheet" href="../css/newsStyles.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+<body>
+  <ion-header>
+    <ion-toolbar>
+   
+        <ion-button expand="block" data-url="#/six" id="my-button">Global Education News</ion-button>
+     
+        <script>
+        const button = document.getElementById('my-button');
+        const originalText = button.innerHTML;
+        let newText = 'Click on Arrows for More!';
+        
+        button.addEventListener('click', () => {
+          if (button.innerHTML === originalText) {
+            button.innerHTML = newText;
+          } else {
+            button.innerHTML = originalText;
+          }
+        });
+        </script>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+      
+      <ion-content>
+        <ion-list id="news">
+       
+      
+        <div class="arrow-buttons arrow-left">
+          <ion-button id="prev" disabled>
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </div>
+        <div class="arrow-buttons arrow-right">
+          <ion-button id="next">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-list>
+      </ion-content>
+      
+  
+  <script src="../js/news.js"></script>
+</body>
+</html>
